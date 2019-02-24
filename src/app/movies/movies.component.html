@@ -1,1 +1,6 @@
-<wjs-movie *ngFor="let m of movies" [movie]="m"></wjs-movie>
+<mat-form-field>
+    <input matInput type="search" placeholder="Szukaj" [(ngModel)]="searchTitle">
+</mat-form-field>
+<main>
+    <wjs-movie *ngFor="let m of filteredMovies" [movie]="m"></wjs-movie>
+</main>

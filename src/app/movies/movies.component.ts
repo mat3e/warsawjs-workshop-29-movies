@@ -8,11 +8,16 @@ import { MoviesService } from './movies.service';
   styleUrls: ['./movies.component.css']
 })
 export class MoviesComponent implements OnInit {
-  movies: Movie[] = [];
+  searchTitle = '';
+  private movies: Movie[] = [];
 
   constructor(private service: MoviesService) { }
 
   async ngOnInit() {
     this.movies = await this.service.readMovies();
+  }
+
+  get filteredMovies() {
+    return this.movies.filter(m  => m.title.toLowerCase().includes(this.searchTitle.toLowerCase()));
   }
 }

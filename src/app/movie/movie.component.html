@@ -2,13 +2,14 @@
     <mat-card-header>
       <mat-card-title>{{movie.title}}</mat-card-title>
     </mat-card-header>
-    <iframe mat-card-image height="315" [src]="wrappedMovieUrl" frameborder="0"
+    <iframe mat-card-image height="315" [src]="wrappedMovieUrl" frameborder="0" *ngIf="isVideo"
       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
     </iframe>
+    <div *ngIf="!isVideo">obrazek</div>
     <mat-card-content>
       <p>{{movie.description}}</p>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button>LIKE</button>
+      <button mat-button (click)="isVideo = !isVideo">SWITCH</button>
     </mat-card-actions>
   </mat-card>
