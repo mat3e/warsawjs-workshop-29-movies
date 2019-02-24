@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'movies';
+  title = 'WarsawJS-Movies';
+  test = 'nowości';
+  onClick() {
+    alert('Klik, klik!');
+  }
 }
